@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>売却</title>
+  <style>
+    .week-header {
+  background: #e9eef3;
+  font-weight: bold;
+  text-align: left;
+}
+
+.week-summary {
+  background: #fafafa;
+  text-align: right;
+  font-weight: bold;
+}
+
+    body { font-family: sans-serif; padding: 20px; }
+    input { margin: 4px; padding: 6px; }
+    button { margin: 6px 4px; padding: 6px 12px; cursor: pointer; }
+
+    table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background: #f3f3f3; }
+
+    .profit-plus { color: green; font-weight: bold; }
+    .profit-minus { color: red; font-weight: bold; }
+
+    #result { margin-top: 16px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h1>売却履歴</h1>
+
+<!-- 売却入力 -->
+<div>
+  <input id="code" disabled>
+  <input id="stock" disabled>
+  <input id="buyPrice" disabled>
+  <input id="holdQuantity" disabled placeholder="保有株数">
+  <input id="sellQuantity" placeholder="売却株数">
+  <input id="sellPrice" placeholder="売却価格">
+  <input id="memo" placeholder="メモ(任意)">
+</div>
+
+<button id="sell">売却確定</button>
+<button onclick="location.href='index.html'">保有一覧に戻る</button>
+
+<div id="result"></div>
+
+<h2>売却履歴</h2>
+<table>
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>銘柄</th>
+      <th>取得単価</th>
+      <th>売却単価</th>
+      <th>株数</th>
+      <th>損益</th>
+      <th>損益率</th>
+      <th>メモ</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody id="sellList"></tbody>
+</table>
+
+<script src="sellscript.js"></script>
+</body>
+</html>

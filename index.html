@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>株トレード記録</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .form input, .form button { margin: 4px; padding: 6px; }
+    table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background: #f3f3f3; }
+    .icon-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 16px; margin: 0 3px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>ポートフォリオ</h1>
+
+<p>
+  <a href="sell.html" style="text-decoration:none;">
+    👉 売却記録（売却ページ）へ
+  </a>
+</p>
+
+
+<div class="form">
+  <input id="code" type="number" placeholder="銘柄番号">
+  <input id="stock" placeholder="銘柄名">
+  <input id="quantity" type="number" placeholder="株数">
+  <input id="price" type="number" placeholder="取得単価">
+  <input id="targetPrice" type="number" placeholder="目標株価">
+
+  <button id="add">記録</button>
+  <button id="update" style="display:none;">更新</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>銘柄</th>
+      <th>株数</th>
+      <th>取得単価</th>
+      <th>総額</th>
+      <th>目標株価</th>
+      <th>みんかぶ</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody id="list"></tbody>
+</table>
+
+<h2 id="total">投資総額：0 円</h2>
+
+<script src="script.js"></script>
+</body>
+</html>
